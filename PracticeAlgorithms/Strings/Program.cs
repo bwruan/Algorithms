@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Strings.Algos;
+using System;
 
 namespace Strings
 {
@@ -6,7 +7,7 @@ namespace Strings
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
