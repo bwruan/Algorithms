@@ -10,7 +10,7 @@ namespace Arrays.Algorithms
         public int MaxContiguousSubArrSum(int[] arr)
         {
             //initialize for Kadane's Algo
-            var maxGlobal = 0;
+            var maxGlobal = int.MinValue;
             var maxAtIndex = 0;
 
             //traverse array
