@@ -37,5 +37,66 @@ namespace Arrays.Algorithms
 
             return missing;
         }
+
+        //no extra space
+        public int Segregate(int[] arr)
+        {
+            var j = 0;
+
+            //segregate negatives to left side of arr and pos to right side
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] <= 0)
+                {
+                    var temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+
+                    j++;
+                }
+            }
+
+            return j;
+        }
+
+        //find smallest pos missing num
+        public int SmallestMissingPosNum(int[] arr)
+        {
+            //mark arr[i] as visited by making arr[arr[i]-1] negative
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if(Math.Abs(arr[i]) -1 < arr.Length && arr[Math.Abs(arr[i]) - 1] > 0)
+                {
+                    arr[Math.Abs(arr[i]) - 1] = -arr[Math.Abs(arr[i]) - 1];
+                }
+            }
+
+            //reutrn first index value that is positive
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if(arr[i] > 0)
+                {
+                    return i + 1;
+                }
+            }
+
+            //add 1 b/c index starts at 0
+            return arr.Length + 1;
+        }
+
+        public int FindMissing(int[] arr)
+        {
+            var shift = Segregate(arr);
+            var arr2 = new int[arr.Length - shift];
+            var j = 0;
+
+            for(int i = shift; i < arr.Length; i++)
+            {
+                arr2[j] = arr[i];
+                j++;
+            }
+
+            return SmallestMissingPosNum(arr2);
+        }
     }
 }
