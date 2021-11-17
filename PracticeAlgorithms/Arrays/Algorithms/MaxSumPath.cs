@@ -7,8 +7,10 @@ namespace Arrays.Algorithms
     //2 sorted Arr, may have common elements
     //find sum of max sum path
     //switch from one arr to another at common element
+    //common elements does not need to be in same index
     public class MaxSumPath
     {
+        //method of same index common element
         public int FindMaxPathSum(int[] ar1, int[] ar2)
         {
             //initialize index
@@ -24,16 +26,20 @@ namespace Arrays.Algorithms
             //break out of loop if condition is not met
             while(i < ar1.Length && j < ar2.Length)
             {
-                //if ar1[i] < ar2[j]
-                if(ar1[i] < ar2[j])
+                //if(ar1[i] < ar2[j])
+                //{
+                //    sum1 += ar1[i++];
+                //}
+                //else if(ar1[i] > ar2[j])
+                //{
+                //    sum2 += ar2[j++];
+                //}
+
+                //if element in index does not match
+                //sum up all elements up to the index in both arr, indv
+                if(ar1[i] != ar2[j])
                 {
-                    //sum1 += ar1[i], increment i
                     sum1 += ar1[i++];
-                }
-                //if ar1[i] < ar2[j]
-                else if(ar1[i] > ar2[j])
-                {
-                    //sum2 += ar2[j], increment j
                     sum2 += ar2[j++];
                 }
                 //otherwise if ar1[i] = ar2[j]
@@ -76,5 +82,10 @@ namespace Arrays.Algorithms
 
             return result;
         }
+
+        /*For common element in different index 
+         Add common element and index in e/ arr to dictionary
+         sum up elements up until the index of common element in e/ arr
+         take larger sum and add to common element and the rest is the same*/
     }
 }
