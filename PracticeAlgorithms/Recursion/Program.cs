@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Recursion.Algorithms;
+using System;
 
 namespace Recursion
 {
@@ -6,7 +7,7 @@ namespace Recursion
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
     }
 }
