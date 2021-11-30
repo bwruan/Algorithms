@@ -7,7 +7,7 @@ namespace Recursion.Algorithms
     //given head node of Linked List, reverse list
     public class ReverseLinkedList
     {
-        public void ReverseList(Node<int> head)
+        public Node<int> ReverseList(Node<int> head)
         {
             //initiate current, prev. and next nodes
             Node<int> curr = head;
@@ -30,14 +30,7 @@ namespace Recursion.Algorithms
             //after reaching the end, set head as prev node (which should have been the final node in the original list)
             head = prev;
 
-            //print reversed list
-            //set curr as new head, iterate and print
-            curr = head;
-            while(curr != null)
-            {
-                Console.Write(curr.data + " ");
-                curr = curr.next;
-            }
+            return head;
         }
     }
 }

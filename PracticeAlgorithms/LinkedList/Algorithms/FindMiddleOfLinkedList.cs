@@ -8,7 +8,7 @@ namespace Recursion.Algorithms
     //if even list, 2 middles, print 2nd middle
     public class FindMiddleOfLinkedList
     {
-        public void FindMiddleNode(Node<int> head)
+        public Node<int> FindMiddleNode(Node<int> head)
         {
             //create two pointer node, slow and fast
             Node<int> slow = head;
@@ -25,9 +25,9 @@ namespace Recursion.Algorithms
                     fast = fast.next.next;
                     slow = slow.next;
                 }
-
-                Console.WriteLine("Middle node is " + slow);
             }
+
+            return slow;
         }
     }
 }

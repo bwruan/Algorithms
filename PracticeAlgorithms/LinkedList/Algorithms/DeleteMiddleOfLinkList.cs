@@ -8,13 +8,13 @@ namespace Recursion.Algorithms
     //e.g. 1->2->3->4->5 = 1->2->4->5
     public class DeleteMiddleOfLinkList
     {
-        public void RemoveMiddleNode(Node<int> head)
+        public Node<int> RemoveMiddleNode(Node<int> head)
         {
             //print null if linked list is null or only has 1 node 
             //removing that one node makes linked list empty
             if (head == null || head.next == null)
             {
-                Console.WriteLine("Null");
+                return null;
             }
 
             //initialize fast and slow pointers
@@ -37,7 +37,9 @@ namespace Recursion.Algorithms
             //once finished, set the next node for the prev pointer = the next node of slow pointer
             //essentially removes the middle node
             //as slow is now at the middle now that fast has reached the end of the list
-            prev.next = slow.next;  
+            prev.next = slow.next;
+
+            return head;
         }
     }
 }

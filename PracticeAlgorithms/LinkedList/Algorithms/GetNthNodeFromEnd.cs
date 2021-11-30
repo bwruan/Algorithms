@@ -37,19 +37,17 @@ namespace Recursion.Algorithms
             //if so, move main pointer to the next node and return
             if(fast == null)
             {
-                slow = slow.next;
-                return slow;
+                return slow.next;
             }
-            else //otherwise, keep looping and moving both pointers to next node, until ref pointer is null; return main pointer
-            {
-                while(fast != null)
-                {
-                    slow = slow.next;
-                    fast = fast.next;
-                }
 
-                return slow;
+            //otherwise, keep looping and moving both pointers to next node, until ref pointer is null; return main pointer
+            while (fast != null)
+            {
+                slow = slow.next;
+                fast = fast.next;
             }
+
+            return slow;
         }
     }
 }
