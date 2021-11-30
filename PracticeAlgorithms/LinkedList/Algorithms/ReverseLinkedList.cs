@@ -28,6 +28,7 @@ namespace LinkedList.Algorithms
             }
             
             //after reaching the end, set head as prev node (which should have been the final node in the original list)
+            //or instead of setting head = prev, can just return prev
             head = prev;
 
             return head;
