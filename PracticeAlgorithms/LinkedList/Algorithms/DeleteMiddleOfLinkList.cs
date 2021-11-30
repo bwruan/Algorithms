@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Recursion.Algorithms
+namespace LinkedList.Algorithms
 {
     //given linked list, delete middle node
     //e.g. 1->2->3->4->5 = 1->2->4->5

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Recursion.Algorithms
+namespace LinkedList.Algorithms
 {
     //given list, find middle node
     //if even list, 2 middles, print 2nd middle

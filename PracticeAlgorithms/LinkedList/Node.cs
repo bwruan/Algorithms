@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Recursion
+namespace LinkedList
 {
     public class Node<T>
     {

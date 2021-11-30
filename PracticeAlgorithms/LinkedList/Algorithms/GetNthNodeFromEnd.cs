@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Recursion.Algorithms
+namespace LinkedList.Algorithms
 {
     //given linked list and # n, find the nth node from the end of linked list
     public class GetNthNodeFromEnd

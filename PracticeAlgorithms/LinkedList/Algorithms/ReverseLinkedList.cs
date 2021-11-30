@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Recursion.Algorithms
+namespace LinkedList.Algorithms
 {
     //given head node of Linked List, reverse list
     public class ReverseLinkedList
