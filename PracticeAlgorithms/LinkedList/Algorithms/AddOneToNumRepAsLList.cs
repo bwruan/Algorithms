@@ -31,18 +31,9 @@ namespace LinkedList.Algorithms
             while(curr != null)
             {
                 sum = curr.data + carry;
+                carry = sum / 10;
 
-                if(sum >= 10)
-                {
-                    carry = 1;
-                    sum = sum % 10;
-                }
-                else
-                {
-                    carry = 0;
-                }
-
-                curr.data = sum;
+                curr.data = sum % 10; ;
 
                 curr = curr.next;
             }
