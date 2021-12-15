@@ -11,7 +11,7 @@ namespace LinkedList.Algorithms
         {
             if(mid.next == null)
             {
-                Console.WriteLine("given node is end of list");
+                mid = null;
             }
 
             Node<int> curr = mid;

@@ -37,7 +37,6 @@ namespace LinkedList.Algorithms
             if(ptr != null && ptr.next != null)
             {
                 ptr.data = ptr.next.data;
-                curr = ptr.next;
                 ptr.next = ptr.next.next;
             }
 
