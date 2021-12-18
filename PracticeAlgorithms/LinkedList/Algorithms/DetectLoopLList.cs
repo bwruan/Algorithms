@@ -14,7 +14,7 @@ namespace LinkedList.Algorithms
             Node<int> fast = head;
 
             //if head is null or there is only 1 node in list, return false
-            if(head == null || head.next == null)
+            if(head == null || head.Next == null)
             {
                 return false;
             }
@@ -22,10 +22,10 @@ namespace LinkedList.Algorithms
             //while nodes at fast pointer != null and next node of fast pointer != null
             //keep moving pointers
             //if they match, there is a loop
-            while(fast != null && fast.next != null)
+            while(fast != null && fast.Next != null)
             {
-                slow = slow.next;
-                fast = fast.next.next;
+                slow = slow.Next;
+                fast = fast.Next.Next;
 
                 if(slow == fast)
                 {

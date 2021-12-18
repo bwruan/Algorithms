@@ -18,12 +18,12 @@ namespace LinkedList.Algorithms
             if(head != null)
             {
                 //while fast pointer is not null and there is a next node
-                while(fast != null && fast.next != null)
+                while(fast != null && fast.Next != null)
                 {
                     //move fast pointer by 2 and slow pointer by 1
                     //slow will be at middle when fast reaches end of list
-                    fast = fast.next.next;
-                    slow = slow.next;
+                    fast = fast.Next.Next;
+                    slow = slow.Next;
                 }
             }
 

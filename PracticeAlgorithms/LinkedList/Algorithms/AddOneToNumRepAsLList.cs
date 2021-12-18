@@ -30,12 +30,12 @@ namespace LinkedList.Algorithms
             //move curr to next node
             while(curr != null)
             {
-                sum = curr.data + carry;
+                sum = curr.Data + carry;
                 carry = sum / 10;
 
-                curr.data = sum % 10; ;
+                curr.Data = sum % 10; ;
 
-                curr = curr.next;
+                curr = curr.Next;
             }
             
             //if carry still has a non-zero value

@@ -28,7 +28,7 @@ namespace LinkedList.Algorithms
                     return null;
                 }
 
-                fast = fast.next;
+                fast = fast.Next;
                 count++;
             }
 
@@ -37,14 +37,14 @@ namespace LinkedList.Algorithms
             //if so, move main pointer to the next node and return
             if(fast == null)
             {
-                return slow.next;
+                return slow.Next;
             }
 
             //otherwise, keep looping and moving both pointers to next node, until ref pointer is null; return main pointer
             while (fast != null)
             {
-                slow = slow.next;
-                fast = fast.next;
+                slow = slow.Next;
+                fast = fast.Next;
             }
 
             return slow;

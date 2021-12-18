@@ -16,11 +16,11 @@ namespace LinkedList.Algorithms
 
             while(curr1 != null && curr2 != null)
             {
-                next_1 = curr1.next;
-                next_2 = curr2.next;
+                next_1 = curr1.Next;
+                next_2 = curr2.Next;
 
-                curr2.next = next_1;
-                curr1.next = curr2;
+                curr2.Next = next_1;
+                curr1.Next = curr2;
 
                 curr1 = next_1;
                 curr2 = next_2;

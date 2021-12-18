@@ -20,8 +20,8 @@ namespace LinkedList.Algorithms
 
             while(curr1 != curr2)
             {
-                curr1 = curr1.next;
-                curr2 = curr2.next;
+                curr1 = curr1.Next;
+                curr2 = curr2.Next;
 
                 if(curr1 == curr2)
                 {

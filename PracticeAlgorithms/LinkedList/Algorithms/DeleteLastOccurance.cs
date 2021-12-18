@@ -15,29 +15,29 @@ namespace LinkedList.Algorithms
 
             while(curr != null)
             {
-                if(curr.data == x)
+                if(curr.Data == x)
                 {
                     ptr = curr;
                 }
 
-                curr = curr.next;
+                curr = curr.Next;
             }
 
-            if(ptr != null && ptr.next == null)
+            if(ptr != null && ptr.Next == null)
             {
                 curr = head;
-                while(curr.next != ptr)
+                while(curr.Next != ptr)
                 {
-                    curr = curr.next;
+                    curr = curr.Next;
                 }
 
-                curr.next = null;
+                curr.Next = null;
             }
 
-            if(ptr != null && ptr.next != null)
+            if(ptr != null && ptr.Next != null)
             {
-                ptr.data = ptr.next.data;
-                ptr.next = ptr.next.next;
+                ptr.Data = ptr.Next.Data;
+                ptr.Next = ptr.Next.Next;
             }
 
             return head;

@@ -6,13 +6,13 @@ namespace LinkedList
 {
     public class Node<T>
     {
-        public T data;
-        public Node<T> next;
+        public T Data;
+        public Node<T> Next;
 
         public Node(T d)
         {
-            data = d;
-            next = null;
+            Data = d;
+            Next = null;
         }
     }
 }

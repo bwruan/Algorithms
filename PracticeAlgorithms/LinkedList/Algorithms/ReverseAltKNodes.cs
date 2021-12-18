@@ -22,8 +22,8 @@ namespace LinkedList.Algorithms
 
             while (count < k && curr != null)
             {
-                next = curr.next;
-                curr.next = prev;
+                next = curr.Next;
+                curr.Next = prev;
                 prev = curr;
                 curr = next;
                 count++;
@@ -31,19 +31,19 @@ namespace LinkedList.Algorithms
 
             if(head != null)
             {
-                head.next = curr;
+                head.Next = curr;
             }
 
             count = 0;
             while(count < k - 1 && curr != null)
             {
-                curr = curr.next;
+                curr = curr.Next;
                 count++;
             }
 
             if(curr != null)
             {
-                curr.next = KAltReverse(curr.next, k);
+                curr.Next = KAltReverse(curr.Next, k);
             }
 
             return prev;

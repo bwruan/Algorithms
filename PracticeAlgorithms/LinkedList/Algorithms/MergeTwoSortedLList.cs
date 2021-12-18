@@ -19,14 +19,14 @@ namespace LinkedList.Algorithms
                 return h1;
             }
 
-            if (h1.data < h2.data)
+            if (h1.Data < h2.Data)
             {
-                h1.next = SortedMerge(h1.next, h2);
+                h1.Next = SortedMerge(h1.Next, h2);
                 return h1;
             }
             else
             {
-                h2.next = SortedMerge(h1, h2.next);
+                h2.Next = SortedMerge(h1, h2.Next);
                 return h2;
             }
         }

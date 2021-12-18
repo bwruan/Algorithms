@@ -9,14 +9,14 @@ namespace LinkedList.Algorithms
     {
         public void DeleteMiddleAccess(Node<int> mid)
         {
-            if(mid.next == null)
+            if(mid.Next == null)
             {
                 mid = null;
             }
 
             Node<int> curr = mid;
-            curr.data = curr.next.data;
-            curr.next = curr.next.next;
+            curr.Data = curr.Next.Data;
+            curr.Next = curr.Next.Next;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace LinkedList.Algorithms
         {
             //print null if linked list is null or only has 1 node 
             //removing that one node makes linked list empty
-            if (head == null || head.next == null)
+            if (head == null || head.Next == null)
             {
                 return null;
             }
@@ -32,7 +32,7 @@ namespace LinkedList.Algorithms
                     return head;
                 }
 
-                fast = fast.next;
+                fast = fast.Next;
                 count++;
             }
 
@@ -41,18 +41,18 @@ namespace LinkedList.Algorithms
             //set slow = next node
             if (fast == null)
             {
-                return head.next;
+                return head.Next;
             }
 
             while (fast != null)
             {
                 prev = slow;
-                slow = slow.next;
-                fast = fast.next;
+                slow = slow.Next;
+                fast = fast.Next;
             }
 
             //set prev's next node = slow's next node (aka skip node slow pointer currently pointing to (aka nth node from end and delete)
-            prev.next = slow.next;
+            prev.Next = slow.Next;
 
             return head;
         }

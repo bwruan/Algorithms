@@ -21,8 +21,8 @@ namespace LinkedList.Algorithms
             //set curr as the next node
             while(curr != null)
             {
-                next = curr.next;
-                curr.next = prev;
+                next = curr.Next;
+                curr.Next = prev;
                 prev = curr;
                 curr = next;
             }

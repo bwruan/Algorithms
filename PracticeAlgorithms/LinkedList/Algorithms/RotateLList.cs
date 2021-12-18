@@ -27,26 +27,26 @@ namespace LinkedList.Algorithms
 
             //while next node is not null
             //iterate current pointer to next node
-            while(curr.next != null)
+            while(curr.Next != null)
             {
-                curr = curr.next;
+                curr = curr.Next;
             }
 
             //reaches end of list (as broken out of loop)
             //set next = head of list and change curr pointer back to head
             //currently a loop in link list as end of list points back to head
-            curr.next = head;
+            curr.Next = head;
             curr = head;
 
             //iterate through the list until node is < k-1
             for(int i = 0; i < k - 1; i++)
             {
-                curr = curr.next;
+                curr = curr.Next;
             }
 
             //set head = next node and change next to null (aka break loop)
-            head = curr.next;
-            curr.next = null;
+            head = curr.Next;
+            curr.Next = null;
 
             return head;
         }

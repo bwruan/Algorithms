@@ -23,8 +23,8 @@ namespace LinkedList.Algorithms
 
             while(count < k && curr != null)
             {
-                next = curr.next;
-                curr.next = prev;
+                next = curr.Next;
+                curr.Next = prev;
                 prev = curr;
                 curr = next;
                 count++;
@@ -32,7 +32,7 @@ namespace LinkedList.Algorithms
 
             if(next != null)
             {
-                head.next = ReverseKGroup(next, k);
+                head.Next = ReverseKGroup(next, k);
             }
 
             return prev;

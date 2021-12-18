@@ -13,15 +13,15 @@ namespace LinkedList.Algorithms
             Node<int> slow = head;
             Node<int> fast = head;
 
-            if(head == null || head.next == null)
+            if(head == null || head.Next == null)
             {
                 return null;
             }
 
-            while (fast != null && fast.next != null)
+            while (fast != null && fast.Next != null)
             {
-                slow = slow.next;
-                fast = fast.next.next;
+                slow = slow.Next;
+                fast = fast.Next.Next;
 
                 if (slow == fast)
                 {
@@ -32,13 +32,13 @@ namespace LinkedList.Algorithms
             if(slow == fast)
             {
                 slow = head;
-                while(slow.next != fast.next)
+                while(slow.Next != fast.Next)
                 {
-                    slow = slow.next;
-                    fast = fast.next;
+                    slow = slow.Next;
+                    fast = fast.Next;
                 }
 
-                fast.next = null;
+                fast.Next = null;
             }
 
             return head;

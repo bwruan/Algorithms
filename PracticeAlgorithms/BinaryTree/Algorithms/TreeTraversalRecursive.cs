@@ -6,46 +6,46 @@ namespace BinaryTree.Algorithms
 {
     public class TreeTraversalRecursive
     {
-        public void PrintPreorder(Node<int> root)
+        public void PrintPreorder(TreeNode<int> root)
         {
             if(root == null)
             {
                 return;
             }
 
-            Console.WriteLine(root.data + " ");
+            Console.WriteLine(root.Data + " ");
 
-            PrintPreorder(root.left);
+            PrintPreorder(root.Left);
 
-            PrintPreorder(root.right);
+            PrintPreorder(root.Right);
         }
 
-        public void PrintInorder(Node<int> root)
+        public void PrintInorder(TreeNode<int> root)
         {
             if (root == null)
             {
                 return;
             }
 
-            PrintInorder(root.left);
+            PrintInorder(root.Left);
 
-            Console.WriteLine(root.data + " ");
+            Console.WriteLine(root.Data + " ");
 
-            PrintInorder(root.right);
+            PrintInorder(root.Right);
         }
 
-        public void PrintPostorder(Node<int> root)
+        public void PrintPostorder(TreeNode<int> root)
         {
             if (root == null)
             {
                 return;
             }
 
-            PrintPostorder(root.left);
+            PrintPostorder(root.Left);
 
-            PrintPostorder(root.right);
+            PrintPostorder(root.Right);
 
-            Console.WriteLine(root.data + " ");
+            Console.WriteLine(root.Data + " ");
         }
     }
 }

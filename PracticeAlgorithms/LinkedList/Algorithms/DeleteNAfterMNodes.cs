@@ -12,25 +12,25 @@ namespace LinkedList.Algorithms
             Node<int> curr = head;
             var count = 0;
 
-            while(curr.next != null && count < m)
+            while(curr.Next != null && count < m)
             {
-                curr = curr.next;
+                curr = curr.Next;
                 count++;
             }
 
-            if(curr.next == null)
+            if(curr.Next == null)
             {
                 return head;
             }
 
-            Node<int> t = curr.next;
+            Node<int> t = curr.Next;
             for(count = 1; count <= n && t != null; count++)
             {
                 Node <int> temp = t;
-                t = t.next;
+                t = t.Next;
             }
 
-            curr.next = t;
+            curr.Next = t;
             curr = t;
 
             return head;

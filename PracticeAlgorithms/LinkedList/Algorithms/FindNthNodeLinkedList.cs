@@ -16,13 +16,13 @@ namespace LinkedList.Algorithms
             while(current != null)
             {
                 //if data at current node equals to the value we want, return the node
-                if(current.data == n)
+                if(current.Data == n)
                 {
                     return current;
                 }
 
                 //otherwise, set current to the next node
-                current = current.next; 
+                current = current.Next; 
             }
 
             //return nukl if value is not found

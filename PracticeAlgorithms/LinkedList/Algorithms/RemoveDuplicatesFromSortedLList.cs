@@ -20,17 +20,17 @@ namespace LinkedList.Algorithms
             }
 
             //otherwise, while curr.next is not null
-            while(curr.next != null)
+            while(curr.Next != null)
             {
                 //check if data in current node = next node's data
                 //if yes, skip it and set next one more node over
-                if(curr.data == curr.next.data)
+                if(curr.Data == curr.Next.Data)
                 {
-                    curr.next = curr.next.next;
+                    curr.Next = curr.Next.Next;
                 }
                 else //otherwise, set curr = next node
                 {
-                    curr = curr.next;
+                    curr = curr.Next;
                 }
             }
 
