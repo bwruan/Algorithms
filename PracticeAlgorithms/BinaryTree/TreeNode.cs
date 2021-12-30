@@ -10,11 +10,11 @@ namespace BinaryTree
         public TreeNode<T> Left;
         public TreeNode<T> Right;
 
-        public TreeNode(T d)
+        public TreeNode(T data, TreeNode<T> left, TreeNode<T> right)
         {
-            Data = d;
-            Left = null;
-            Right = null;
+            Data = data;
+            Left = left;
+            Right = right;
         }
     }
 }
