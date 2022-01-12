@@ -109,6 +109,22 @@ namespace BinaryTree.Algorithms
             return new TreeNode<int>(inOrder[maxIndex], left, right);
         }
 
+        public int ConvertTreeToSumTree(TreeNode<int> root)
+        {
+            if(root == null)
+            {
+                return 0;
+            }
+
+            var left = ConvertTreeToSumTree(root.Left);
+            var right = ConvertTreeToSumTree(root.Right);
+
+            var temp = root.Data + left + right;
+            root.Data = left + right;
+
+            return temp;
+        }
+
         private int Search(int[] arr, int start, int end, int ele)
         {
             var i = start;
