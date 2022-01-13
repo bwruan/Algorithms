@@ -103,7 +103,58 @@ namespace BinaryTree.Algorithms
 
         public void PrintPathWithoutRecursion(TreeNode<int> root)
         {
+            if(root == null)
+            {
+                return;
+            }
 
+            var stk = new Stack<TreeNode<int>>();
+            stk.Push(root);
+
+            var parent = new Dictionary<TreeNode<int>, TreeNode<int>>();
+
+            parent.Add(root, null);
+
+            while(stk.Count != 0)
+            {
+                TreeNode<int> curr = stk.Pop();
+
+                if(curr.Left == null && curr.Right == null)
+                {
+                    PrintTopToBottom(curr, parent);
+                }
+
+                if(curr.Right != null)
+                {
+                    parent.Add(curr.Right, curr);
+                    stk.Push(curr.Right);
+                }
+
+                if(curr.Left != null)
+                {
+                    parent.Add(curr.Left, curr);
+                    stk.Push(curr.Left);
+                }
+            }
+        }
+
+        private void PrintTopToBottom(TreeNode<int> curr, Dictionary<TreeNode<int>, TreeNode<int>> parent)
+        {
+            var stack = new Stack<TreeNode<int>>();
+
+            while(curr != null)
+            {
+                stack.Push(curr);
+                curr = parent[curr];
+            }
+
+            while(stack.Count != 0)
+            {
+                curr = stack.Pop();
+                Console.Write(curr.Data + " ");
+            }
+
+            Console.WriteLine();
         }
     }
 }
