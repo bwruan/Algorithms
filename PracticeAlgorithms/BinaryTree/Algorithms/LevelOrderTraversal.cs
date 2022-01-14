@@ -27,8 +27,13 @@ namespace BinaryTree.Algorithms
             PrintLevelOrder(root.Right, lvl + 1, tracker);
         }
 
-        public void PrintLevelOrderIterative(TreeNode<int> root)
+        public void PrintLevelOrderIterativelyLinearly(TreeNode<int> root)
         {
+            if(root == null)
+            {
+                return;
+            }
+
             var que = new Queue<TreeNode<int>>();
             que.Enqueue(root);
 
@@ -46,6 +51,45 @@ namespace BinaryTree.Algorithms
                 {
                     que.Enqueue(temp.Right);
                 }
+            }
+        }
+
+        public void PrintLevelOrderIterativelyByLevel(TreeNode<int> root)
+        {
+            if(root == null)
+            {
+                return;
+            }
+
+            var q = new Queue<TreeNode<int>>();
+            q.Enqueue(root);
+
+            while (true)
+            {
+                var i = q.Count;
+                if(i == 0)
+                {
+                    break;
+                }
+
+                while (i > 0)
+                {
+                    TreeNode<int> temp = q.Dequeue();
+                    Console.Write(temp.Data + " ");
+
+                    if (temp.Left != null)
+                    {
+                        q.Enqueue(temp.Left);
+                    }
+
+                    if (temp.Right != null)
+                    {
+                        q.Enqueue(temp.Right);
+                    }
+
+                    i--;
+                }
+                Console.WriteLine();
             }
         }
     }
