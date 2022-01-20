@@ -138,6 +138,111 @@ namespace BinaryTree.Algorithms
             }
         }
 
+        public int SumLongestRootToLeafPath(TreeNode<int> root, List<int> currPath, int maxLen)
+        {            
+            if(root == null)
+            {
+                return 0;
+            }
+
+            if(root.Left == null && root.Right == null)
+            {
+                currPath.Add(root.Data);
+                if(currPath.Count != maxLen)
+                {
+                    currPath.Remove(root.Data);
+                    return 0;
+                }
+                
+                var sum = 0;
+                foreach(var data in currPath)
+                {
+                    sum += data;
+                }
+
+                currPath.Remove(root.Data);
+                return sum;
+            }
+
+            currPath.Add(root.Data);
+            var leftSum = SumLongestRootToLeafPath(root.Left, currPath, maxLen);
+            var rightSum = SumLongestRootToLeafPath(root.Right, currPath, maxLen);
+
+            currPath.Remove(root.Data);
+
+            return leftSum + rightSum;
+        }
+
+        public int MaxLeafToRootPathSum(TreeNode<int> root, List<int> currPath, ref int maxSum)
+        {
+            if(root == null)
+            {
+                return 0;
+            }
+
+            if (root.Left == null && root.Right == null)
+            {
+                var sum = 0;
+                currPath.Add(root.Data);
+
+                foreach (var data in currPath)
+                {
+                    sum += data;
+                }
+
+                currPath.Remove(root.Data);
+
+                if(sum > maxSum)
+                {
+                    maxSum = sum;
+                }
+                
+                return maxSum;
+            }
+
+            currPath.Add(root.Data);
+            MaxLeafToRootPathSum(root.Left, currPath, ref maxSum);
+            MaxLeafToRootPathSum(root.Right, currPath, ref maxSum);
+            currPath.Remove(root.Data);
+
+            return maxSum;
+        }
+
+        public void PrintAllPathWithSumK(TreeNode<int> root, int k, List<int> currPath)
+        {
+            if (root == null)
+            {
+                return;
+            }
+
+            if(root.Data == k)
+            {
+                Console.WriteLine(root.Data);
+            }
+
+            currPath.Add(root.Data);
+            PrintAllPathWithSumK(root.Left, k, currPath);
+            PrintAllPathWithSumK(root.Right, k, currPath);
+
+            var sum = 0;
+
+            for(var i = currPath.Count -1; i >= 0; i--)
+            {
+                sum += currPath[i];
+
+                if(sum == k)
+                {
+                    for(var j = 0; j < currPath.Count; j++)
+                    {
+                        Console.Write(currPath[j] + " ");
+                    }
+                    Console.Write("\n");
+                }
+            }
+
+            currPath.RemoveAt(currPath.Count - 1);
+        }
+
         private void PrintTopToBottom(TreeNode<int> curr, Dictionary<TreeNode<int>, TreeNode<int>> parent)
         {
             var stack = new Stack<TreeNode<int>>();

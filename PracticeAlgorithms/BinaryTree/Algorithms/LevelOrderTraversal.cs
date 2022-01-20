@@ -64,9 +64,10 @@ namespace BinaryTree.Algorithms
             var q = new Queue<TreeNode<int>>();
             q.Enqueue(root);
 
-            while (true)
+            while (q.Count != 0)
             {
                 var i = q.Count;
+
                 if(i == 0)
                 {
                     break;
