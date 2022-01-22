@@ -243,6 +243,51 @@ namespace BinaryTree.Algorithms
             currPath.RemoveAt(currPath.Count - 1);
         }
 
+        public int MaxPathSumBtwnTwoLeaves(TreeNode<int> root, ref int maxSum)
+        {
+            if(root == null)
+            {
+                return 0;
+            }
+
+            if(root.Left == null && root.Right == null)
+            {
+                return root.Data;
+            }
+
+            var leftSum = MaxPathSumBtwnTwoLeaves(root.Left, ref maxSum);
+            var rightSum = MaxPathSumBtwnTwoLeaves(root.Right, ref maxSum);
+
+            if(root.Left != null && root.Right != null)
+            {
+                maxSum = Math.Max(maxSum, root.Data + leftSum + rightSum);
+
+                return Math.Max(leftSum, rightSum) + root.Data;
+            }
+
+            return (root.Left == null) ? root.Data + rightSum : root.Data + leftSum;
+        }
+
+        public int LargestSubtreeSum(TreeNode<int> root, ref int maxSum)
+        {
+            if(root == null)
+            {
+                return 0;
+            }
+
+            if(root.Left == null && root.Right == null)
+            {
+                return root.Data;
+            }
+
+            var ls = LargestSubtreeSum(root.Left, ref maxSum);
+            var rs = LargestSubtreeSum(root.Right, ref maxSum);
+
+            maxSum = Math.Max(maxSum, root.Data + ls + rs);
+
+            return root.Data + ls + rs;
+        }
+
         private void PrintTopToBottom(TreeNode<int> curr, Dictionary<TreeNode<int>, TreeNode<int>> parent)
         {
             var stack = new Stack<TreeNode<int>>();
