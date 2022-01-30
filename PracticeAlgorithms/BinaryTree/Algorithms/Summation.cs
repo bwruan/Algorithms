@@ -288,6 +288,33 @@ namespace BinaryTree.Algorithms
             return root.Data + ls + rs;
         }
 
+        public void SumOfLeafAtMinLevel(TreeNode<int> root, int currLev, ref int leafMinLev, ref int sum)
+        {
+            if(root == null)
+            {
+                return;
+            }
+
+            if(root.Left == null && root.Right == null)
+            {
+                if(currLev == leafMinLev)
+                {
+                    sum += root.Data;
+                }
+
+                if(currLev < leafMinLev)
+                {
+                    leafMinLev = currLev;
+                    sum = root.Data;
+                }
+                
+                return;
+            }
+
+            SumOfLeafAtMinLevel(root.Left, currLev + 1, ref leafMinLev, ref sum);
+            SumOfLeafAtMinLevel(root.Right, currLev + 1, ref leafMinLev, ref sum);
+        }
+
         private void PrintTopToBottom(TreeNode<int> curr, Dictionary<TreeNode<int>, TreeNode<int>> parent)
         {
             var stack = new Stack<TreeNode<int>>();

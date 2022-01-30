@@ -165,5 +165,20 @@ namespace BinaryTree.Algorithms
 
             return CheckIfIdentical(root1.Left, root2.Left) && CheckIfIdentical(root1.Right, root2.Right);
         }
+
+        public bool CheckIfRootToLeafPathExists(TreeNode<int> root, int[] path, int index)
+        {
+            if(root == null && index >= path.Length)
+            {
+                return true;
+            }
+
+            if((root == null && index < path.Length) || (index >= path.Length && root != null) || (root.Data != path[index]))
+            {
+                return false;
+            }
+
+            return CheckIfRootToLeafPathExists(root.Left, path, index + 1) || CheckIfRootToLeafPathExists(root.Right, path, index + 1);
+        }
     }
 }
